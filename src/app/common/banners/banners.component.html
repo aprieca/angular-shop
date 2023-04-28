@@ -1,0 +1,20 @@
+<div class="container-fluid my-2">
+    <div class="row g-2">
+        <div *ngFor="let image of bannerImages$|async;" class="col-lg-4 col-md-4">
+            <div class="banners">
+                <img class="banner-image" [src]="image.image">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row">
+    <div class="col-4">
+        <div *ngFor="let image of images"; class="banners">
+            <img  class="banner-image" [src]="image">
+        </div>
+    </div>
+    </div>
+</div> -->

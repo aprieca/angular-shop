@@ -1,0 +1,38 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let category of categoryData" class="col-lg-4 col-md-4">
+            <ul>
+                <li>
+                  <img [src]="category.image" alt="Category Image">
+                  <h2>{{ category.category }}</h2>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container justify-content-center justify-content-between">
+    <div class="row">
+        <div *ngFor="let category of categoryData" class="col ">
+            <ul>
+                <div class="category-element">
+                    <li>
+                        <img [src]="category.image" alt="Category Image">
+                        <p>{{ category.category }}</p>
+                      </li>
+                </div>
+              </ul>
+        </div>
+    </div>
+</div> -->
+
+
+  <div class="category-element">
+    <ul class="mx-auto d-flex justify-content-center align-items-center ps-0 gap-2">
+      <li *ngFor="let category of categoryDisplay$ |async">
+        <img [src]="category.image" alt="Category Image" />
+        <p>{{ category.category }}</p>
+      </li>
+    </ul>
+  </div>
+
