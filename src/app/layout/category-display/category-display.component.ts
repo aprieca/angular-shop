@@ -9,13 +9,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./category-display.component.scss'],
 })
 export class CategoryDisplayComponent implements ICategoryDisplay {
-  constructor(private CategoryDisplayService: CategoryDisplayService) {}
+  constructor(private CategoryDisplayService: CategoryDisplayService
+    ) {}
 
   ngOnInit(): void {
     // this.loadCategoryData();
     this.categoryDisplay$ = this.CategoryDisplayService.getCategoryData();
   }
 
+  id:string = "";
   category: string = '';
   image: string = '';
   categoryDisplay$? : Observable<ICategoryDisplay[]>

@@ -6,8 +6,8 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div *ngFor="let image of images;" class="carousel-item active" >
-        <img [src]="image" class="d-block w-100" alt="...">
+      <div *ngFor="let image of sliderImages$|async;" class="carousel-item active" >
+        <img [src]="image.image" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

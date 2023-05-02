@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
-import { SliderComponent } from './common/slider/slider.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SliderComponent } from './layout/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BannersComponent } from './common/banners/banners.component';
-import { CategoryDisplayComponent } from './common/category-display/category-display.component';
-
+import { BannersComponent } from './layout/banners/banners.component';
+import { CategoryDisplayComponent } from './layout/category-display/category-display.component';
+import { TestComponent } from './layout/test/test.component';
+import { HomeComponent } from './home/home.component';
+import { CategoryProductComponent } from './product/category/category-product/category-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,9 @@ import { CategoryDisplayComponent } from './common/category-display/category-dis
     SliderComponent,
     BannersComponent,
     CategoryDisplayComponent,
+    TestComponent,
+    HomeComponent,
+    CategoryProductComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,10 @@
   <div class="category-element">
     <ul class="mx-auto d-flex justify-content-center align-items-center ps-0 gap-2">
       <li *ngFor="let category of categoryDisplay$ |async">
-        <img [src]="category.image" alt="Category Image" />
-        <p>{{ category.category }}</p>
+        <a routerLink="/collections/{{category.id}}">
+          <img [src]="category.image" alt="Category Image" />
+          <p>{{ category.category }}</p>
+        </a>
       </li>
     </ul>
   </div>
