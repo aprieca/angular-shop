@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { SliderService } from './slider.service';
-import { ISlider } from './slider.interface';
-import { Observable } from 'rxjs';
-
+import {Component, Input, OnInit} from '@angular/core';
+import {SliderService} from './slider.service';
+import {ISlider} from './slider.interface';
+import {catchError, Observable, startWith, throwError} from 'rxjs';
 
 
 @Component({
@@ -10,22 +9,23 @@ import { Observable } from 'rxjs';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements ISlider {
-  public image: string = "";
-  public sliderImages$? : Observable<ISlider[]>
+export class SliderComponent implements OnInit, ISlider {
+  image: string = "";
+  text: string = "";
+  title: string = "";
+  sliderImages$?: Observable<ISlider[]>
 
-  constructor(private SliderService: SliderService) {}
+  @Input() endpoint: string = ""
 
-  ngOnInit(): void {
-    this.sliderImages$ = this.SliderService.getSliderImages();
-    // this.loadImages();
+  constructor(private SliderService: SliderService) {
   }
 
-  // public loadImages() :void {
-  //   this.SliderService.getSliderImages().subscribe((response: ISlider[]) => {
-  //     response.forEach((element: ISlider) => {
-  //       this.images.push(element.image);
-  //     });
-  //   });
-  // }
+  ngOnInit(): void {
+    this.sliderImages$ = this.SliderService.getSliderImages(this.endpoint).pipe(
+      catchError(error => {
+        console.log("Error al cargar el slider", error)
+        return throwError(() => error);
+      }),
+    );
+  }
 }

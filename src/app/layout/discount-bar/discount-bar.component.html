@@ -1,0 +1,13 @@
+<ng-container *ngIf="discountBarData$|async;else loading">
+  <ng-container *ngFor="let data of discountBarData$|async;">
+    <div [ngClass]="{'d-none':data.enabled ==='false'}" class="container-fluid discount-bar d-flex justify-content-center">
+      <p>{{data.text}}</p>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-template #loading>
+  <div class="spinner-grow spinner-grow-sm"></div>
+</ng-template>
+
+
+

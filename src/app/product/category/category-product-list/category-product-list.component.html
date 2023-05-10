@@ -1,1 +1,30 @@
-<p>category-product-list works!</p>
+<div *ngIf="productList$|async;else loading" class="container">
+  <div class="row">
+    <div *ngFor="let product of productList$ |async;" class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card mb-4 border-0">
+        <a [routerLink]="['/product',product.id]">
+          <div class="product-image">
+            <img [src]="product.image" class="card-img-top card-img-filter" alt="product-image">
+            <img class="favorite icon" src="../../../../assets/img/heart.svg" [ngClass]="{'favorite-true':product.favorite === 'true'}" alt="fav-icon">
+            <div class="icon-row">
+              <img class="icon me-2" src="../../../../assets/img/look.svg" alt="look-icon">
+              <img class="icon me-2" src="../../../../assets/img/cart-new.svg" alt="cart-icon">
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <div class="card-price">
+              <span [ngClass]="{'discount-old':product.discount !=''}">{{product.price|currency:'EUR':'symbol'}}</span>
+              <span class="discount-new"
+                    *ngIf="product.discount">{{product.discount|currency:'EUR':'symbol'}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-grow spinner-grow-sm"></div>
+</ng-template>

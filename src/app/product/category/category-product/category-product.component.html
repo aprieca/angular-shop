@@ -1,1 +1,6 @@
-<p>category-product works!</p>
+<ng-container *ngIf="catID">
+<app-slider [endpoint]="'http://localhost:3001/images/slider/collections/'+catID"></app-slider>
+</ng-container>
+<app-category-product-list [productList$]="categoryProduct$"></app-category-product-list>
+
+

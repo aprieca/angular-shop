@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 export class SliderService {
   constructor(private http: HttpClient) {}
 
-getSliderImages() : Observable<ISlider[]>{
-  return this.http.get<ISlider[]>('http://localhost:3001/images/slider');
+getSliderImages(endpoint:string) : Observable<ISlider[]>{
+  return this.http.get<ISlider[]>(endpoint);
 }
 
 }

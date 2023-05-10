@@ -1,20 +1,14 @@
-<div class="container-fluid my-2">
+<div *ngIf="bannerImages$|async;else loading" class="container-fluid my-2">
     <div class="row g-2">
         <div *ngFor="let image of bannerImages$|async;" class="col-lg-4 col-md-4">
             <div class="banners">
-                <img class="banner-image" [src]="image.image">
+                <img class="banner-image" [src]="image.image" alt="banner-image">
+              <p>{{image.text}}</p>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- <div class="container">
-    <div class="row">
-    <div class="col-4">
-        <div *ngFor="let image of images"; class="banners">
-            <img  class="banner-image" [src]="image">
-        </div>
-    </div>
-    </div>
-</div> -->
+<ng-template #loading>
+  <div class="spinner-grow spinner-grow-sm"></div>
+</ng-template>

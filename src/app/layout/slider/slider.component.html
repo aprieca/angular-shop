@@ -1,22 +1,35 @@
-<div class="carousel-container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+<div *ngIf="sliderImages$|async;else loading" class="carousel-container">
+  <div id="carouselIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouseIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div *ngFor="let image of sliderImages$|async;" class="carousel-item active" >
+      <div *ngFor="let image of sliderImages$|async;" class="carousel-item active">
         <img [src]="image.image" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <p>{{image.title}}</p>
+          <p>{{image.text}}</p>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+            data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+            data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
 </div>
+
+<ng-template #loading>
+  <div class="spinner-grow spinner-grow-sm"></div>
+</ng-template>

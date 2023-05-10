@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class BannersService {
 
+  endpoint:string="http://localhost:3001/images/banner"
   constructor(private http:HttpClient) { }
 
 
   getBannerImages() : Observable<IBanners[]>{
-    return this.http.get<IBanners[]>('http://localhost:3001/images/banner');
+    return this.http.get<IBanners[]>(this.endpoint);
   }
 }
