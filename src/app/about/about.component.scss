@@ -1,42 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700,100&display=swap');
+$font-family_1: 'Roboto Condensed', sans-serif;
 
+@import "https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700,100&display=swap";
 .banner-image {
   width: 100%;
   object-fit: cover;
 }
-
 .text-head {
   font-size: 60px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $font-family_1;
 }
-
 .text-second {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $font-family_1;
 }
-
-.banner-text p {
-  font-size: 30px;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 100;
+.banner-text {
+  p {
+    font-size: 30px;
+    font-family: $font-family_1;
+    font-weight: 100;
+  }
 }
-
-.row .col-4 {
-  height: 250px;
+.row {
+  .col-4 {
+    height: 250px;
+    &:nth-child(1) {
+      background: lightblue;
+    }
+    &:nth-child(2) {
+      background: lightpink;
+    }
+    &:nth-child(3) {
+      background: lightyellow;
+    }
+  }
 }
-
-.row .col-4:nth-child(1) {
-  background: lightblue;
-}
-
-.row .col-4:nth-child(2) {
-  background: lightpink;
-}
-
-.row .col-4:nth-child(3) {
-  background: lightyellow;
-}
-
-.banner-card p {
-  font-size: 20px;
-  font-family: 'Roboto Condensed', sans-serif;
+.banner-card {
+  p {
+    font-size: 19px;
+    font-family: $font-family_1;
+  }
 }

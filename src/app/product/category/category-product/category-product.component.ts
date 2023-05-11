@@ -30,7 +30,7 @@ export class CategoryProductComponent implements OnInit, ICategoryProduct {
     if (this.catID) {
       this.categoryProduct$ = this.categoryProductService.getCategoryProduct(this.catID).pipe(
         catchError(error => {
-          console.log("Error al cargar el slider", error)
+          console.log("Error al cargar los productos de la categoría", error)
           return throwError(() => error);
         }),
       );

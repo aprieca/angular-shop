@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { IBanners } from './banners.interface';
 import { BannersService } from './banners.service';
-import {catchError, map, Observable, of, startWith, throwError} from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 
 @Component({
   selector: 'app-banners',
@@ -19,7 +19,7 @@ export class BannersComponent implements OnInit,IBanners{
   ngOnInit(): void {
     this.bannerImages$ = this.BannersService.getBannerImages().pipe(
       catchError(error => {
-        console.log("Error al cargar el slider", error)
+        console.log("Error al cargar el banner", error)
         return throwError(() => error);
       }),
     );

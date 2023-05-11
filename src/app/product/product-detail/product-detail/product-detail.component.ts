@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {catchError, Observable, startWith, throwError} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
 import {IProduct} from "./product-detail.interface";
 import {ProductDetailService} from "./product-detail.service";
 import {ActivatedRoute} from "@angular/router";
@@ -31,7 +31,7 @@ export class ProductDetailComponent implements OnInit ,IProduct {
     if (this.productId) {
       this.product$ = this.productDetailService.getProductInfo(this.productId).pipe(
         catchError(error => {
-          console.log("Error al cargar el slider", error)
+          console.log("Error al cargar el producto", error)
           return throwError(() => error);
         }),
       );

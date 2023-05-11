@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {catchError, map, Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {IProduct} from "../product-detail/product-detail.interface";
 
 @Component({
@@ -18,6 +18,5 @@ export class ProductDetailDisplayComponent implements OnInit{
   protected readonly parseInt = parseInt;
 
   ngOnInit(): void {
-
   }
 }

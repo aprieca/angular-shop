@@ -1,11 +1,13 @@
-.discount-bar{
-  background-color: black;
-}
-.discount-bar p{
-  color: #e5d1ec;
-  padding: 15px;
-  margin-bottom: 0;
-  font-size: 15px;
-  font-weight: bold;
+$pink: #e5d1ec;
+$black: #000000;
 
+.discount-bar {
+  background-color: $black;
+  p {
+    color: $pink;
+    padding: 15px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

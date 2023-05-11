@@ -1,26 +1,27 @@
-.nav-item a{
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin-right: 15px;
-  transition: all 0.4s;
-}
+$black: #000000;
+$lightcoral: #f08080;
 
-.nav-item a:hover{
-  color:lightcoral;
+.nav-item {
+  a {
+    text-decoration: none;
+    color: $black;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 15px;
+    transition: all 0.4s;
+    &:hover {
+      color: $lightcoral;
+    }
+  }
 }
-
-.navbar-brand{
+.navbar-brand {
   height: 50px;
   width: 100px;
+  img {
+    width: 110px;
+  }
 }
-
-.nav-icons{
+.nav-icons {
   width: 20px;
-}
-
-.navbar-brand img{
-  width: 110px;
 }
 

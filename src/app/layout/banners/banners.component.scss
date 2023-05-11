@@ -1,18 +1,19 @@
- .banner-image{
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- }
+$white: #FFFFFF;
 
- .banners p{
-   position: absolute;
-   left: 20px;
-   bottom: 25px;
-   font-size: 20px;
-   color: white;
-   font-weight: bold;
- }
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banners {
+  p {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    font-size: 20px;
+    color: $white;
+    font-weight: bold;
+  }
+  position: relative;
+}
 
- .banners{
-   position: relative;
- }

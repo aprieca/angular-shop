@@ -1,16 +1,20 @@
-.carousel-item > img{
+.carousel-item {
+  >img {
     height: 500px;
     object-fit: cover;
     object-position: center;
+  }
 }
-
-.carousel-container{
-    margin-bottom: 20px;
+.carousel-container {
+  margin-bottom: 20px;
 }
-
-.carousel-caption p:first-child{
-  font-size: 40px;
-}
-.carousel-caption p:last-child{
-  font-size: 25px;
+.carousel-caption {
+  p {
+    &:first-child {
+      font-size: 40px;
+    }
+    &:last-child {
+      font-size: 25px;
+    }
+  }
 }

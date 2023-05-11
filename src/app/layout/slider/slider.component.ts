@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SliderService} from './slider.service';
 import {ISlider} from './slider.interface';
-import {catchError, Observable, startWith, throwError} from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 
 
 @Component({

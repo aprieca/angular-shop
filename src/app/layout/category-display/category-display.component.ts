@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ICategoryDisplay} from './category-display.interface';
 import {CategoryDisplayService} from './category-display.service';
-import {catchError, Observable, startWith, throwError} from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 
 @Component({
   selector: 'app-category-display',
@@ -21,7 +21,7 @@ export class CategoryDisplayComponent implements OnInit, ICategoryDisplay {
   ngOnInit(): void {
     this.categoryDisplay$ = this.CategoryDisplayService.getCategoryData().pipe(
       catchError(error => {
-        console.log("Error al cargar el slider", error)
+        console.log("Error al cargar la categoría", error)
         return throwError(() => error);
       }),
     );

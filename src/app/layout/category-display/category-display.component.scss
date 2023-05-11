@@ -1,28 +1,29 @@
-.category-element img{
+$white: #FFFFFF;
+
+.category-element {
+  img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-}
-
-.category-element li{
+  }
+  li {
     list-style: none;
     padding-right: 10px;
-}
-
-.category-element p{
+  }
+  p {
     text-align: center;
+  }
 }
-
-.product-image{
+.product-image {
   position: relative;
+  p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $white;
+  }
 }
 
-.product-image p{
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-}
 

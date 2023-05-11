@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {catchError, map, Observable, of} from "rxjs";
+import {Component, Input} from '@angular/core';
+import {Observable} from "rxjs";
 import {ICategoryProduct} from "../category-product/category-product.interface";
 
 @Component({

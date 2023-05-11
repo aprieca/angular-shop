@@ -20,7 +20,7 @@ export class DiscountBarComponent implements OnInit, IDiscountBar {
   ngOnInit(): void {
     this.discountBarData$ = this.discountBarService.getSliderImages().pipe(
       catchError(error => {
-        console.log("Error al cargar el slider", error)
+        console.log("Error al cargar la barra de descuentos", error)
         return throwError(() => error);
       }),
     );

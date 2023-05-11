@@ -1,7 +1,10 @@
-.logo{
+$lightgrey: #D3D3D3;
+
+.logo {
   width: 110px;
 }
-
-footer .container-fluid{
-  background-color: lightgrey;
+footer {
+  .container-fluid {
+    background-color: $lightgrey;
+  }
 }
